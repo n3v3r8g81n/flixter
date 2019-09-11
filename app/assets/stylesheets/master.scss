@@ -1,6 +1,10 @@
 body {
 }
 
+.frosty {
+    background: rgba(0, 0, 0, 0.5);
+}
+
 h1, h2, h3, h4, h5, h6, .navbar {
     margin: 0;
 }
@@ -12,7 +16,6 @@ h1, h2, h3, h4, h5, h6, .navbar {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  margin: 0;
 }
 
 .navbar {
