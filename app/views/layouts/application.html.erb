@@ -17,7 +17,13 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+      <li class="nav-item">
+        <%= link_to 'See all courses', courses_path, class: 'nav-link' %></li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav ml-auto mt-2 mt-md-0">
       <% if user_signed_in? %>
       <li class="nav-item">
@@ -35,6 +41,7 @@
   </div>
 </nav>
 
+
 <% if notice.present? %>
 <p class="alert alert-info"><%= notice %></p>
 <% end%>
@@ -44,7 +51,8 @@
 <% end %>
 
     <%= yield %>
-  </div>
+
+</div>
   <div id="footer">
     <div class="container">
       <b>Teachers</b>

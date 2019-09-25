@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_scope :users do
     get 'users/sign_out' => 'devise/sessions#destroy'
   end
+  resources :courses, only: [:index, :show]
   namespace :instructor do
     resources :courses, only: [:new, :create, :show]
 end
