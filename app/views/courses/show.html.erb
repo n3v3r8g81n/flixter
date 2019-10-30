@@ -1,28 +1,25 @@
 
 <div class="booyah-box col-10 offset-1">
-  <div>
-      <%= link_to 'Add a new course', instructor_course_path(@course), class: 'btn btn-danger btn-large text-center' %>
+  <div class="row">
+    <div class="col-sm-8 col-12">
+      <h1><%= @course.title %></h1>
     </div>
-    <br><br>
-    <h1><%= @course.title %> Details </h1>
-  <br>
-  <div>
-      <%= link_to 'Add a new section', new_instructor_course_section_path(@course), class: 'btn btn-primary btn-large' %>
+    <div>
+      <% if current_user && current_user == @course.user %>
+        <%= link_to 'Administer', instructor_course_path(@course), class: 'btn btn-danger btn-large' %>
+      <% end %>
     </div>
+  </div>
   
   <div class="row">
     <div class="col-sm-8 col-12">
-        <%= @course.description %>
-        <% if current_user && current_user == @course.user %>
-        <br>
-    </div>
-    <div class="col-sm-4 col-12 text-center">
-        <span class="badge badge-default">
-      <%= number_to_currency @course.cost %>
-    </span>
-    </div>
-    <% end %>
-    
+    <%= @course.description %>
     </div>
 
+    <div class="col-sm-4 col-12">
+      <span class="badge badge-default">
+        <%= number_to_currency @course.cost %>
+      </span>
+    </div>
+  </div>
 </div>
